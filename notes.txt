@@ -1,0 +1,73 @@
+
+mkdir folklore-api
+cd folklore-api
+npm init -y
+npm install express
+in package.json change "type": "commonjs" to "type": "module"
+
+
+create express03/server.js
+
+
+import express from "express";
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+const legends = [
+  {
+    id: 1,
+    name: "Black Shuck",
+    county: "Suffolk"
+  }
+];
+
+app.get("/", (req, res) => {
+  res.send("Folklore API is running");
+});
+
+app.get("/api/legends", (req, res) => {
+  res.json(legends);
+});
+
+app.post("/api/legends", (req, res) => {
+
+  const legend = {
+    id: legends.length + 1,
+    ...req.body
+  };
+
+  legends.push(legend);
+
+  res.status(201).json(legend);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
+run: node server.js
+
+go to: http://localhost:3000/api/legends
+
+
+now try a POST request:
+curl -X POST http://localhost:3000/api/legends \
+-H "Content-Type: application/json" \
+-d '{"name":"Jenny Greenteeth","county":"Lancashire"}'
+
+or use test.html
+
+
+create .gitignore in the root of the project directory: node_modules/
+git init
+git add .
+git commit -m "first commit"
+git remote add origin git@github.com:johncurrandavis/folklore-api.git
+git branch -M main
+git push -u origin main
+
+
