@@ -66,8 +66,27 @@ create .gitignore in the root of the project directory: node_modules/
 git init
 git add .
 git commit -m "first commit"
+create the corresponding repository on github
 git remote add origin git@github.com:johncurrandavis/folklore-api.git
 git branch -M main
 git push -u origin main
 
+in Render:
+click + New
+choose Web Service
+connect GitHub
+select your repository
+
+settings:
+Runtime: Node
+Build Command: npm install
+Start Command: node server.js
+
+deploy
+
+
+now try a POST request:
+curl -X POST http://localhost:3000/api/legends \
+-H "Content-Type: application/json" \
+-d '{"name":"Jenny Greenteeth","county":"Lancashire"}'
 

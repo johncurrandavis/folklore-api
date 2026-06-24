@@ -12,6 +12,12 @@ const legends = [
     id: 1,
     name: "Black Shuck",
     county: "Suffolk"
+  },
+
+  {
+    id: 2,
+    name: "The Loch Ness Moster",
+    county: "Highlands"
   }
 ];
 
