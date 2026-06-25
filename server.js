@@ -1,11 +1,9 @@
 
 import express from "express";
-
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 3000;  // important because Render assigns the port in production
-
-const cors = require('cors');
 
 
 app.use(express.json());
