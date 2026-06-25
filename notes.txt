@@ -2,8 +2,11 @@
 mkdir folklore-api
 cd folklore-api
 npm init -y
-npm install express
 in package.json change "type": "commonjs" to "type": "module"
+
+
+npm install express
+npm install cors
 
 
 http://localhost:3000/
