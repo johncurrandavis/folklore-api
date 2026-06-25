@@ -15,14 +15,18 @@ app.use(cors());  // allow all origins
 const legends = [
   {
     id: 1,
-    name: "Black Shuck",
-    county: "Suffolk"
+    category: "monsters",
+    region: "Suffolk",
+    title: "Black Shuck",
+    description: "A ghostly black dog said to roam the countryside of East Anglia, particularly in Suffolk. It is often described as a large, spectral hound with glowing red eyes and is considered an omen of death."
   },
 
   {
     id: 2,
-    name: "The Loch Ness Monster",
-    county: "Highlands"
+    category: "monsters",
+    region: "Highlands",
+    title: "The Loch Ness Monster",
+    description: "A creature said to inhabit Loch Ness in the Scottish Highlands. Often described as large and long-necked, the first modern sighting was in 1933. Some believe it to be a surviving plesiosaur from the Jurassic period."
   }
 ];
 
