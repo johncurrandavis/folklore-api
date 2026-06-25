@@ -5,7 +5,14 @@ import express from "express";
 const app = express();
 const PORT = process.env.PORT || 3000;  // important because Render assigns the port in production
 
+const cors = require('cors');
+
+
 app.use(express.json());
+app.use(cors());  // allow all origins
+// or restrict it:
+//app.use(cors({ origin: 'https://yourdomain.com' }));
+
 
 const legends = [
   {
