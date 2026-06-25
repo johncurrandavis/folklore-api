@@ -2,32 +2,48 @@
 import express from "express";
 import cors from 'cors';
 
+import legendsRouter from "./routes/legends.js";
+
+
 const app = express();
 const PORT = process.env.PORT || 3000;  // important because Render assigns the port in production
-
 
 app.use(express.json());
 app.use(cors());  // allow all origins
 // or restrict it:
 //app.use(cors({ origin: 'https://yourdomain.com' }));
 
+app.use("/api/legends", legendsRouter);
+
 
 const legends = [
   {
     id: 1,
-    category: "monsters",
-    region: "Suffolk",
-    title: "Black Shuck",
-    description: "A ghostly black dog said to roam the countryside of East Anglia, particularly in Suffolk. It is often described as a large, spectral hound with glowing red eyes and is considered an omen of death."
+    category: "worms",
+    place: "Loch Ness",
+    region: "Highlands",
+    title: "The Loch Ness Monster",
+    description: "A creature said to inhabit Loch Ness in the Scottish Highlands. Often described as large and long-necked, the first modern sighting was in 1933. Some believe it to be a surviving plesiosaur from the Jurassic period."
   },
 
   {
     id: 2,
-    category: "monsters",
-    region: "Highlands",
-    title: "The Loch Ness Monster",
-    description: "A creature said to inhabit Loch Ness in the Scottish Highlands. Often described as large and long-necked, the first modern sighting was in 1933. Some believe it to be a surviving plesiosaur from the Jurassic period."
+    category: "mermaids",
+    place: "Zennor",
+    region: "Cornwall",
+    title: "The Mermaid of Zennor",
+    description: "A mermaid legend tells of a beautiful singer who lured a local man, Mathey Trewella, to live with her beneath the waves. A carved bench end in Zennor church is said to depict the mermaid."
+  },
+
+  {
+    id: 3,
+    category: "hounds",
+    place: null,
+    region: "Suffolk",
+    title: "Black Shuck",
+    description: "A ghostly black dog said to roam the countryside of East Anglia, particularly in Suffolk. It is often described as a large, spectral hound with glowing red eyes and is considered an omen of death."
   }
+
 ];
 
 
