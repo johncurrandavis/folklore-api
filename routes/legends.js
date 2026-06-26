@@ -30,6 +30,15 @@ const legends = [
     region: "Suffolk",
     title: "Black Shuck",
     description: "A ghostly black dog said to roam the countryside of East Anglia, particularly in Suffolk. It is often described as a large, spectral hound with glowing red eyes and is considered an omen of death."
+  },
+
+  {
+    id: 4,
+    category: "worms",
+    place: "Lambton",
+    region: "County Durham",
+    title: "The Lambton Worm",
+    description: "According to the legend, a young  man named John Lambton caught a small worm while fishing and discarded it in a well. The worm grew into a monstrous creature that terrorized the local area until John returned to slay it."
   }
 
 ];
