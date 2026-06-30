@@ -2,7 +2,7 @@
 import express from "express";
 import cors from 'cors';
 
-import router from "./routes/legends.js";
+import legendsRouter from "./routes/legends.js";
 
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(cors());  // allow all origins
 // or restrict it:
 //app.use(cors({ origin: 'https://yourdomain.com' }));
 
-app.use("/api/legends", router);
+app.use("/api/legends", legendsRouter);
 
 
-app.listen(3000);
+app.listen(PORT);
